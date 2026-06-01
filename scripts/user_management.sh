@@ -10,3 +10,7 @@ else
         echo "User doesn't exist"
         
 fi
+echo "    "
+User_List=$(cut -d : -f 1 /etc/passwd)
+echo "Users_List:" 
+echo "$User_List"
