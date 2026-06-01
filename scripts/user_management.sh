@@ -2,9 +2,10 @@
 #output_file=reports/user_management.log
 echo "    "
 read -p "Enter Username: " username
-User=$(id $username >> /dev/null 2>&1)
-if [ $? -eq 0 ]; then
+if  id "$username" >> /dev/null 2>&1; then
         echo "User exists"
+	User_details=$(id $username)
+	echo "User details: $User_details"
 else
         echo "User doesn't exist"
         
