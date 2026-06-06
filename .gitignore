@@ -1,0 +1,21 @@
+# Vim swap files
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+
+# Backup files
+*~
+
+# VS Code
+.vscode/
+
+# Linux generated files
+.DS_Store
+
+# Reports generated during execution
+reports/*.log
