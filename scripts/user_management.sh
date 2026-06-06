@@ -64,4 +64,17 @@ else
 	echo "User doesn't exist"
 fi
 
+read -p "Enter Username to delete a user;" User_Del
+if id "$User_Del" > /dev/null 2>&1; then
+	echo "Deleting User"
+	sudo userdel -r $User_Del
+	if [ $? -eq 0 ]; then
+		echo "User delted successfully"
+	else
+		echo "User deletion failed"
+	fi
+else
+	echo "User doesn't exist"
+fi
 
+	
