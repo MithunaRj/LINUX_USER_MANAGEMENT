@@ -27,4 +27,21 @@ else
 		echo "User creation failed"
 	fi
 fi
+read -p " Enter User name  to lock a user:" User
+if id "$User" > /dev/null 2>&1; then
+	        if sudo passwd -S "$User" | grep -q "L"; then
+			echo " User is already Locked"
+		else
+
+	                echo "Locking User:"
+		        sudo passwd -l $User
+			if [ $? -eq 0 ]; then
+				echo "User Locked successfully"
+			else
+				echo "User Lock failed"
+			fi
+		fi
+else
+	        echo "User doesn't exists"
+fi
 
